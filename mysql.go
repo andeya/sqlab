@@ -11,7 +11,7 @@ type Mysql struct {
 	Sql
 }
 
-func (m *Mysql) UpsertMaker(
+func (m Mysql) UpsertMaker(
 	tableName string, fields []string,
 ) func(valueGroups ...[]interface{}) (sql string, values []interface{}, err error) {
 	if len(fields) == 0 {
